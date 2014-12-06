@@ -124,9 +124,14 @@ my $f_meta = MetaItemFactory->new($conf);
 my $factory = $f_meta->get_factory();
 
 my $t11 = $factory->get_type1_object(uid => 't11', name => 'name1', parent => 'root', description => 'description1');
+my $t12 = $factory->get_type1_object(uid => 't12', name => 'name2', parent => $t11, description => 'description2');
+my $t13 = $factory->get_type1_object(uid => 't13', name => 'name3', parent => $t12, description => 'description3');
 p $t11;
-p $factory->get_type1_object(uid => 't12', name => 'name2', parent => 't11', description => 'description2');
-p $factory->get_type1_object(uid => 't13', name => 'name3', parent => 't13', description => 'description3');
+p $t12;
+p $t13;
 
-p $factory->get_type2_object(uid => 't21', name => 'name4', parent => 'root', description => 'description5');
-p $factory->get_type3_object(uid => 't31', name => 'name5', parent => 'root', type1 => $t11);
+my $t21 = $factory->get_type2_object(uid => 't21', name => 'name4', parent => 'root', description => 'description5');
+my $t31 = $factory->get_type3_object(uid => 't31', name => 'name5', parent => 'root', type1 => $t11);
+
+p $t21;
+p $t31;
