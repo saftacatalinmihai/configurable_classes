@@ -1,7 +1,7 @@
 #!/usr/bin/env perl
 #===============================================================================
 #
-#         FILE: MetaMetaItemFactory.pm
+#         FILE: MetaItemFactory.pm
 #
 #  DESCRIPTION: 
 #
